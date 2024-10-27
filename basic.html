@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dear bhumi</title>
+    <style>
+      /* Basic Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background-color: #4c1a5c;
+        font-family: Arial, sans-serif;
+        color: #23093b;
+      }
+
+      .container {
+        width: 80%;
+        max-width: 700px;
+        padding: 20px;
+        border-radius: 10px;
+        background: #e06bb7;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 24px;
+        color: #221313;
+      }
+
+      p {
+        margin: 15px 0;
+        line-height: 1.6;
+        font-size: 16px;
+      }
+
+      .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .gallery img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: transform 0.2s;
+      }
+
+      .gallery img:hover {
+        transform: scale(1.05);
+      }
+
+      /* Modal styles */
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        align-items: center;
+        justify-content: center;
+      }
+
+      .modal-content {
+        position: relative;
+        width: 80%;
+        max-width: 500px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        text-align: center;
+      }
+
+      .modal-content img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+
+      .caption {
+        margin-top: 10px;
+        font-size: 16px;
+        color: #555;
+      }
+
+      .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 24px;
+        cursor: pointer;
+        color: #888;
+      }
+
+      .close:hover {
+        color: #444;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>To my one & only baccha</h1>
+      <p>
+        I love this tradition you and your baba started, it surpasses any letter
+        <br />(plus we are learning web dev lol)
+      </p>
+      <p>
+        I'm sorry for the way I have been behaving for the past two days. I have
+        been upset about something as silly as the shifa thing you had. I'm
+        working on it and I'll be fine. Love you lots. <br />
+        I loved your website so muchh and I tried to make one myself
+      </p>
+
+      <!-- Image Gallery -->
+      <div class="gallery">
+        <img
+          src="ba.jpg"
+          alt="Caption 1"
+          onclick="openModal('ba.jpg', 'So much love for you guys')"
+        />
+        <img
+          src="cakeab.jpg"
+          alt="Caption 2"
+          onclick="openModal('cakeab.jpg', 'You make me laugh more than anyone')"
+        />
+        <img
+          src="fab.jpg"
+          alt="Caption 3"
+          onclick="openModal('fab.jpg', 'And of course, I love your smile so I ought to make you laugh')"
+        />
+        <img
+          src="kab.jpg"
+          alt="Caption 3"
+          onclick="openModal('kab.jpg', 'Some unseen pics of us')"
+        />
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="imageModal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modalImage" src="" alt="Expanded Image" />
+        <p class="caption" id="imageCaption"></p>
+      </div>
+    </div>
+
+    <script>
+      // Open the modal with the clicked image and caption
+      function openModal(imageSrc, captionText) {
+        document.getElementById("modalImage").src = imageSrc;
+        document.getElementById("imageCaption").textContent = captionText;
+        document.getElementById("imageModal").style.display = "flex";
+      }
+
+      // Close the modal
+      function closeModal() {
+        document.getElementById("imageModal").style.display = "none";
+      }
+    </script>
+  </body>
+</html>
